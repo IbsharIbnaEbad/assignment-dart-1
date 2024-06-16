@@ -60,7 +60,7 @@ void main() {
   toyota.getYear();
   toyota.getAge();
   print("\n");
-  Car honda = Car('Honda' , 'civic', 2018);
+  Car honda = Car('Honda', 'civic', 2018);
   honda.milesDriven = 409;
   honda.getBrand();
   honda.getModel();
