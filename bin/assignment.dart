@@ -1,22 +1,21 @@
-
 class Car {
   String brand;
   String model;
   int year;
-  double milesDriven = 0;
+  double milesDriven = 0.0;
 
-  static int cars = 0;
+  static int numberOfCars = 0;
 
   Car(
     this.brand,
     this.model,
     this.year,
   ) {
-    cars++;
+    numberOfCars++;
   }
 
   void drive(double miles) {
-    milesDriven = miles;
+    milesDriven += miles;
   }
 
   void getMilesdriven() {
@@ -39,13 +38,17 @@ class Car {
     int current = DateTime.now().year;
     int age = current - year;
     print(" age of the car is $age");
+
+    /*  int current = 2024;
+    int age = current - year;
+    print(" age of the car is $age");*/
   }
 }
 
 void main() {
   print("\n");
   Car volkswagen = Car("volkswagen", "beetly", 1965);
-  volkswagen.milesDriven = 100;
+  volkswagen.drive(100);
   volkswagen.getBrand();
   volkswagen.getModel();
   volkswagen.getMilesdriven();
@@ -53,7 +56,7 @@ void main() {
   volkswagen.getAge();
   print("\n");
   Car toyota = Car("Toyota", 'lc', 2020);
-  toyota.milesDriven = 20;
+  toyota.drive(20);
   toyota.getBrand();
   toyota.getModel();
   toyota.getMilesdriven();
@@ -61,10 +64,12 @@ void main() {
   toyota.getAge();
   print("\n");
   Car honda = Car('Honda', 'civic', 2018);
-  honda.milesDriven = 409;
+  honda.drive(40932.2);
   honda.getBrand();
   honda.getModel();
   honda.getMilesdriven();
   honda.getYear();
   honda.getAge();
+
+  print("\n numbers of cars are ${Car.numberOfCars}");
 }
